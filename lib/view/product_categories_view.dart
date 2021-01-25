@@ -12,7 +12,10 @@ class KategoriesView extends StatefulWidget {
 
 class _KategoriesViewState extends State<KategoriesView> {
   List<ProductModel> allProductCategories;
-  List<Marka> alllist;
+
+  List<String> ProductMarkaList = [];
+  List<String> ProductFiyatList = [];
+  List<String> ProductTarihList = [];
 
   String kategori, marka, fiyat, tarih;
 
@@ -34,26 +37,7 @@ class _KategoriesViewState extends State<KategoriesView> {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-
-                        print(index);
-                        print("çuçu" +
-                            allProductCategories[index]
-                                .marka
-                                .length
-                                .toString());
-                        setState(() {
-                          int adet = allProductCategories[index].marka.length;
-
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => ProductListView(
-                                        marka: allProductCategories[index]
-                                            .marka[index]
-                                            .marka,
-                                        adet: adet,
-                                      )));
-                        });
+                        UrunleriListeleme(index, context);
                       },
                       child: Card(
                         child: Center(
@@ -74,6 +58,31 @@ class _KategoriesViewState extends State<KategoriesView> {
         ),
       ),
     );
+  }
+
+  void UrunleriListeleme(int index, BuildContext context) {
+     int adet = allProductCategories[index].marka.length;
+    ProductMarkaList.clear();
+    for (int i = 0;
+        i < allProductCategories[index].marka.length;
+        i++) {
+      ProductMarkaList.add(
+          allProductCategories[index].marka[i].marka);
+      ProductFiyatList.add(
+          allProductCategories[index].marka[i].fiyat);
+      ProductTarihList.add(
+          allProductCategories[index].marka[i].tarih);
+    }
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (_) => ProductListView(
+                  ProductFiyatList: ProductFiyatList,
+                  ProductTarihList: ProductTarihList,
+                  ProductMarkaList: ProductMarkaList,
+                  adet: adet,
+                )));
   }
 
   Future<List<ProductModel>> veriKaynaginiOku() async {

@@ -5,17 +5,24 @@ import 'package:ecommarebasicapp/model/marka.dart';
 import 'package:flutter/material.dart';
 
 class ProductListView extends StatefulWidget {
-  String kategori, marka, fiyat, tarih;
-  List allProducts;
-  int adet=0;
-  ProductListView({this.kategori,this.marka,this.fiyat,this.tarih,this.adet,this.allProducts});
+  List<String> ProductMarkaList = [];
+  List<String> ProductFiyatList = [];
+
+  List<String> ProductTarihList = [];
+
+  int adet;
+
+  ProductListView(
+      {this.adet,
+      this.ProductMarkaList,
+      this.ProductFiyatList,
+      this.ProductTarihList});
+
   @override
   _ProductListViewState createState() => _ProductListViewState();
 }
 
 class _ProductListViewState extends State<ProductListView> {
-  List<Marka> allProductList;
-
   @override
   Widget build(BuildContext context) {
     print("Burası liste");
@@ -24,13 +31,14 @@ class _ProductListViewState extends State<ProductListView> {
         title: Text("List"),
       ),
       body: Container(
-        child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        child: GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
               return Card(
                 child: ListTile(
-                  title: Text(widget.marka),
-                 // subtitle: Text(widget.fiyat),
-
+                  title: Text(widget.ProductMarkaList[index]),
+                  subtitle: Text(widget.ProductFiyatList[index]),
                 ),
               );
             },
@@ -39,16 +47,16 @@ class _ProductListViewState extends State<ProductListView> {
     );
   }
 
-  // Future<List<Marka>> veriKaynaginiOku() async {
-  //   var gelenJson = await DefaultAssetBundle.of(context)
-  //       .loadString("assets/data/product.json");
-  //   List<Marka> urunListesi = (json.decode(gelenJson) as List)
-  //       .map((mapYapisi) => Marka.fromJsonMap(mapYapisi))
-  //       .toList();
-  //
-  //   for (int i = 0; i < urunListesi.length; i++) {
-  //     print("Urunler" + urunListesi[i].toString());
-  //   }
-  //   return urunListesi;
-  // }
+// Future<List<Marka>> veriKaynaginiOku() async {
+//   var gelenJson = await DefaultAssetBundle.of(context)
+//       .loadString("assets/data/product.json");
+//   List<Marka> urunListesi = (json.decode(gelenJson) as List)
+//       .map((mapYapisi) => Marka.fromJsonMap(mapYapisi))
+//       .toList();
+//
+//   for (int i = 0; i < urunListesi.length; i++) {
+//     print("Urunler" + urunListesi[i].toString());
+//   }
+//   return urunListesi;
+// }
 }
