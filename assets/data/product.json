@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "kategori": "Desktop",
+   "marka": [
+     {
+       "marka": "Lenovo",
+       "fiyat": "3700",
+       "tarih": "2018"
+     },
+     {
+       "marka": "Monster",
+       "fiyat": "4800",
+       "tarih": "2019"
+     }
+   ]
+  },
+  {
+    "id": "2",
+    "kategori": "Laptop",
+    "marka": [
+      {
+        "marka": "Asus",
+        "fiyat": "3500",
+        "tarih": "2018"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "kategori": "Phone",
+    "marka": [
+      {
+        "marka": "Samsung",
+        "fiyat": "3500",
+        "tarih": "2018"
+      }
+    ]
+  }
+]
