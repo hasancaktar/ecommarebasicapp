@@ -1,6 +1,8 @@
 import 'package:ecommarebasicapp/view/home_view.dart';
 import 'package:flutter/material.dart';
 
+import 'view/product_categories_view.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeView(),
+      home: KategoriesView(),
     );
   }
 }
