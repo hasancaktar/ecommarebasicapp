@@ -40,7 +40,7 @@ class _ProductListViewState extends State<ProductListView> {
             gridDelegate:
                 SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
-              return Card(
+              return Card( elevation: 8,
                 child: Column(
                   children: [
                     Expanded(

@@ -11,7 +11,7 @@ class KategoriesView extends StatefulWidget {
 }
 
 class _KategoriesViewState extends State<KategoriesView> {
-  List<ProductModel> allProductCategories;
+  List<ProductModel> tumKategoriler;
 
   List<String> ProductMarkaList = [];
   List<String> ProductFiyatList = [];
@@ -92,7 +92,7 @@ class _KategoriesViewState extends State<KategoriesView> {
           future: veriKaynaginiOku(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              allProductCategories = snapshot.data;
+              tumKategoriler = snapshot.data;
               return GridView.builder(
                   padding: EdgeInsets.all(15),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -111,7 +111,7 @@ class _KategoriesViewState extends State<KategoriesView> {
                                 child: Opacity(
                                     opacity: 0.4,
                                     child: Image.network(
-                                        allProductCategories[index]
+                                        tumKategoriler[index]
                                             .kategori_resim)),
                               ),
                             ),
@@ -119,7 +119,7 @@ class _KategoriesViewState extends State<KategoriesView> {
                           Container(
                               alignment: Alignment.center,
                               child: Text(
-                                allProductCategories[index].kategori,
+                                tumKategoriler[index].kategori,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -129,7 +129,7 @@ class _KategoriesViewState extends State<KategoriesView> {
                       ),
                     );
                   },
-                  itemCount: allProductCategories.length);
+                  itemCount: tumKategoriler.length);
             } else {
               return Center(
                 child: CircularProgressIndicator(),
@@ -142,18 +142,18 @@ class _KategoriesViewState extends State<KategoriesView> {
   }
 
   void UrunleriListeleme(int index, BuildContext context) {
-    int adet = allProductCategories[index].marka.length;
+    int adet = tumKategoriler[index].marka.length;
     ProductMarkaList.clear();
     ProductFiyatList.clear();
     ProductTarihList.clear();
     ProductResim.clear();
-    for (int i = 0; i < allProductCategories[index].marka.length; i++) {
-      ProductMarkaList.add(allProductCategories[index].marka[i].marka);
-      ProductFiyatList.add(allProductCategories[index].marka[i].fiyat);
-      ProductTarihList.add(allProductCategories[index].marka[i].tarih);
-      ProductResim.add(allProductCategories[index].marka[i].resim);
+    for (int i = 0; i < tumKategoriler[index].marka.length; i++) {
+      ProductMarkaList.add(tumKategoriler[index].marka[i].marka);
+      ProductFiyatList.add(tumKategoriler[index].marka[i].fiyat);
+      ProductTarihList.add(tumKategoriler[index].marka[i].tarih);
+      ProductResim.add(tumKategoriler[index].marka[i].resim);
     }
-    kategori = allProductCategories[index].kategori;
+    kategori = tumKategoriler[index].kategori;
     Navigator.push(
         context,
         MaterialPageRoute(
