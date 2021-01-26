@@ -33,53 +33,27 @@ class _KategoriesViewState extends State<KategoriesView> {
                 child: Text("T"),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(Icons.home),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Anasayfa",style: TextStyle(fontSize: 20),)
-                ],
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text(
+                "Anasayfa",
+                style: TextStyle(fontSize: 20),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(Icons.person),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Profil",style: TextStyle(fontSize: 20),)
-                ],
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text(
+                "Profil",
+                style: TextStyle(fontSize: 20),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(Icons.info_sharp),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Hakkında",style: TextStyle(fontSize: 20),)
-                ],
+            ListTile(
+              leading: Icon(Icons.info_sharp),
+              title: Text(
+                "Hakkında",
+                style: TextStyle(fontSize: 20),
               ),
-            )
-
-
+            ),
           ],
         ),
       ),
@@ -111,8 +85,7 @@ class _KategoriesViewState extends State<KategoriesView> {
                                 child: Opacity(
                                     opacity: 0.4,
                                     child: Image.network(
-                                        tumKategoriler[index]
-                                            .kategori_resim)),
+                                        tumKategoriler[index].kategori_resim)),
                               ),
                             ),
                           ),
