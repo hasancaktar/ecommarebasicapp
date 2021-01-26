@@ -1,39 +1,162 @@
 [
   {
     "id": "1",
-    "kategori": "Desktop",
-   "marka": [
-     {
-       "marka": "Lenovo",
-       "fiyat": "3700",
-       "tarih": "2018"
-     },
-     {
-       "marka": "Monster",
-       "fiyat": "4800",
-       "tarih": "2019"
-     }
-   ]
+    "kategori": "Masaüstü",
+    "kategori_resim": "https://www.onlineportakal.com/Uploads/UrunResimleri/buyuk/samsung-65nu8500-65-165-ekran-uydu-alici-c758.jpg",
+    "marka": [
+      {
+        "marka": "Lenovo",
+        "fiyat": "5700",
+        "tarih": "2018",
+        "resim": "https://www.lenovo.com/medias/lenovo-desktops-thinkcentre-m920-tiny-hero.png?context=bWFzdGVyfHJvb3R8MjI5NDU0fGltYWdlL3BuZ3xoMzYvaDZkLzk3ODY1MTczMjM4MDYucG5nfDg1YjczOTExOWQ1YmY4YjNiOWI2YzI4MWY5N2Y3MmYzOWEyY2FmNDllZmJhNDVlM2U0YmI2NTE2MzI0YTQyMGM"
+      },
+      {
+        "marka": "MSI",
+        "fiyat": "8890",
+        "tarih": "2019",
+        "resim": "https://storage-asset.msi.com/event/spb/2019/best-gaming-desktop-pc/images/kv-pd2020.png"
+      },
+      {
+        "marka": "HP",
+        "fiyat": "6300",
+        "tarih": "2019",
+        "resim": "https://www.trendyol.com/Assets/ProductImages/oa/54/4908782/1/193015819597_1_org_zoom.jpg"
+      },
+      {
+        "marka": "Acer",
+        "fiyat": "5120",
+        "tarih": "2019",
+        "resim": "https://5.imimg.com/data5/WL/BW/MY-5337572/acer-desktop-computer-500x500.jpg"
+      },
+      {
+        "marka": "IMac",
+        "fiyat": "12,000",
+        "tarih": "2019",
+        "resim": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/imac-og-202008?wid=1200&hei=630&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1594849639000"
+      }
+    ]
   },
   {
     "id": "2",
     "kategori": "Laptop",
+    "kategori_resim": "https://cdn.akakce.com/huawei/huawei-matebook-d-14-ryzen-5-3500u-8-gb-512-gb-ssd-radeon-vega-8-14-full-hd-notebook-z.jpg",
     "marka": [
       {
         "marka": "Asus",
-        "fiyat": "3500",
-        "tarih": "2018"
+        "fiyat": "9200",
+        "tarih": "2018",
+        "resim": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/asus/thumb/TeoriV2-103675_large.jpg"
+      },
+      {
+        "marka": "Lenovo IP",
+        "fiyat": "7120",
+        "tarih": "2018",
+        "resim": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lenovo/thumb/lenovo-ip-gaming-3-core-i7-gorseli-108910_large.jpg"
+      },
+      {
+        "marka": "HP Omen",
+        "fiyat": "9630",
+        "tarih": "2018",
+        "resim": "https://productimages.hepsiburada.net/s/31/1500/10324810956850.jpg"
+      },{
+        "marka": "DELL G3",
+        "fiyat": "9999",
+        "tarih": "2018",
+        "resim": "https://phatdatcomputer.vn/upload/product/dell-g3-15-350070223130-black-i510300h2x4gb256g-ssd1tb-hdd4gb-gtx-1650w10ledkbfp1561609136557.jpg"
+      },{
+        "marka": "Acer Predator",
+        "fiyat": "8500",
+        "tarih": "2018",
+        "resim": "https://productimages.hepsiburada.net/s/42/1500/10731285938226.jpg"
+      },{
+        "marka": "Monster Tulpar T7",
+        "fiyat": "11,250",
+        "tarih": "2018",
+        "resim": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/125037060/125037060_1_MC/43955304.jpg"
+      },{
+        "marka": "Huawei Matebook",
+        "fiyat": "9540",
+        "tarih": "2018",
+        "resim": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_78577228/mobile_786_587_png/HUAWEI-MateBook-D14-14%22-i5-10210U--8GB--256GB-IPS-Full-HD-Ekran--Win-10-Laptop-Mistik-Gri"
+      },{
+        "marka": "Razer Blade 15",
+        "fiyat": "6499.90",
+        "tarih": "2018",
+        "resim": "https://www.hidevolution.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/l/blade_stealth_fhd_2020_render_1__1_3.png"
       }
     ]
   },
   {
     "id": "3",
-    "kategori": "Phone",
+    "kategori": "Telefon",
+    "kategori_resim": "https://i2.cnnturk.com/i/cnnturk/75/0x0/5c20aab961361f1ee454c0ff",
     "marka": [
       {
         "marka": "Samsung",
         "fiyat": "3500",
-        "tarih": "2018"
+        "tarih": "2018",
+        "resim": "https://cdn.akakce.com/samsung/samsung-galaxy-s21-128-gb-z.jpg"
+      },
+      {
+        "marka": "Iphone 11",
+        "fiyat": "8600",
+        "tarih": "2018",
+        "resim": "https://cdn.cimri.io/image/1000x1000/appleiphonegbgbraminmpakllceptelefonubeyaz_178954745.jpg"
+      },
+      {
+        "marka": "Huawei P40 Pro",
+        "fiyat": "6700",
+        "tarih": "2018",
+        "resim": "https://cdn.akakce.com/huawei/huawei-p40-pro-256-gb-z.jpg"
+      },
+      {
+        "marka": "Asus Rog 3",
+        "fiyat": "9980",
+        "tarih": "2018",
+        "resim": "https://www.did.ie/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/z/s/zs661ks-1a010-1.jpg"
+      },
+      {
+        "marka": "Xiaomi Mi 11",
+        "fiyat": "4000",
+        "tarih": "2018",
+        "resim": "https://www.log.com.tr/wp-content/uploads/2020/12/xiaomi-mi-11-pro-tasarimi-tam-olarak-boyle-olabilir-1.jpg"
+      },
+      {
+        "marka": "Oneplus 7 Pro",
+        "fiyat": "5500",
+        "tarih": "2018",
+        "resim": "https://img.gkbcdn.com/p/2019-05-17/global-rom-oneplus-7-pro-6-67-inch-8gb-256gb-smartphone-mirror-grey-1571990724046._w500_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "kategori": "Kulaklık",
+    "kategori_resim": "https://ayb.akinoncdn.com/products/2020/01/23/31945/f0386988-05b2-4ecf-864f-169f13567994_size780x780_quality60_cropCenter.jpg",
+    "marka": [
+      {
+        "marka": "Sony",
+        "fiyat": "500",
+        "tarih": "2018",
+        "resim": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/110262274/110262274_0_MC/15695598.jpg"
+      },
+      {
+        "marka": "Apple Airpods 2",
+        "fiyat": "854.90",
+        "tarih": "2018",
+        "resim": "https://img-morhipo.mncdn.com/mnresize/1200/1645/productimages/i/190199098527/[img][5][2].jpg?1212"
+      },
+      {
+        "marka": "JBL",
+        "fiyat": "150",
+        "tarih": "2018",
+        "resim": "https://yorumbudur.com/content/icerik/big/jbl-c100siublk-kulaklik_yorumbudurcom.jpg"
+      },
+      {
+        "marka": "Xiaomi",
+        "fiyat": "120",
+        "tarih": "2018",
+        "resim": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/145059568/145059568_1_MC/34308337.jpg"
       }
     ]
   }

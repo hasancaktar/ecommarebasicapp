@@ -16,14 +16,76 @@ class _KategoriesViewState extends State<KategoriesView> {
   List<String> ProductMarkaList = [];
   List<String> ProductFiyatList = [];
   List<String> ProductTarihList = [];
+  List<String> ProductResim = [];
 
   String kategori, marka, fiyat, tarih;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text("Test"),
+              accountEmail: Text("test@test.com"),
+              currentAccountPicture: CircleAvatar(
+                child: Text("T"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.home),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("Anasayfa",style: TextStyle(fontSize: 20),)
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.person),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("Profil",style: TextStyle(fontSize: 20),)
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(Icons.info_sharp),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("Hakkında",style: TextStyle(fontSize: 20),)
+                ],
+              ),
+            )
+
+
+          ],
+        ),
+      ),
       appBar: AppBar(
-        title: Text("Categories"),
+        actions: [IconButton(icon: Icon(Icons.info), onPressed: () {})],
+        title: Center(child: Text("Kategoriler")),
       ),
       body: Container(
         child: FutureBuilder(
@@ -32,19 +94,38 @@ class _KategoriesViewState extends State<KategoriesView> {
             if (snapshot.hasData) {
               allProductCategories = snapshot.data;
               return GridView.builder(
+                  padding: EdgeInsets.all(15),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
+                      crossAxisCount: 2),
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
                         UrunleriListeleme(index, context);
                       },
-                      child: Card(
-                        child: Center(
-                          child: GridTile(
-                            child: Text(allProductCategories[index].kategori),
+                      child: Stack(
+                        children: [
+                          Card(
+                            elevation: 15,
+                            child: Center(
+                              child: GridTile(
+                                child: Opacity(
+                                    opacity: 0.4,
+                                    child: Image.network(
+                                        allProductCategories[index]
+                                            .kategori_resim)),
+                              ),
+                            ),
                           ),
-                        ),
+                          Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                allProductCategories[index].kategori,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 35.0),
+                              )),
+                        ],
                       ),
                     );
                   },
@@ -61,19 +142,18 @@ class _KategoriesViewState extends State<KategoriesView> {
   }
 
   void UrunleriListeleme(int index, BuildContext context) {
-     int adet = allProductCategories[index].marka.length;
+    int adet = allProductCategories[index].marka.length;
     ProductMarkaList.clear();
-    for (int i = 0;
-        i < allProductCategories[index].marka.length;
-        i++) {
-      ProductMarkaList.add(
-          allProductCategories[index].marka[i].marka);
-      ProductFiyatList.add(
-          allProductCategories[index].marka[i].fiyat);
-      ProductTarihList.add(
-          allProductCategories[index].marka[i].tarih);
+    ProductFiyatList.clear();
+    ProductTarihList.clear();
+    ProductResim.clear();
+    for (int i = 0; i < allProductCategories[index].marka.length; i++) {
+      ProductMarkaList.add(allProductCategories[index].marka[i].marka);
+      ProductFiyatList.add(allProductCategories[index].marka[i].fiyat);
+      ProductTarihList.add(allProductCategories[index].marka[i].tarih);
+      ProductResim.add(allProductCategories[index].marka[i].resim);
     }
-
+    kategori = allProductCategories[index].kategori;
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -81,6 +161,8 @@ class _KategoriesViewState extends State<KategoriesView> {
                   ProductFiyatList: ProductFiyatList,
                   ProductTarihList: ProductTarihList,
                   ProductMarkaList: ProductMarkaList,
+                  ProductResim: ProductResim,
+                  katergori: kategori,
                   adet: adet,
                 )));
   }

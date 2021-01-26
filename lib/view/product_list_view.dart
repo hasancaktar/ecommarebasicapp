@@ -7,13 +7,16 @@ import 'package:flutter/material.dart';
 class ProductListView extends StatefulWidget {
   List<String> ProductMarkaList = [];
   List<String> ProductFiyatList = [];
-
+  List<String> ProductResim = [];
   List<String> ProductTarihList = [];
+  String katergori;
 
   int adet;
 
   ProductListView(
       {this.adet,
+      this.katergori,
+      this.ProductResim,
       this.ProductMarkaList,
       this.ProductFiyatList,
       this.ProductTarihList});
@@ -27,8 +30,10 @@ class _ProductListViewState extends State<ProductListView> {
   Widget build(BuildContext context) {
     print("Burası liste");
     return Scaffold(
-      appBar: AppBar(
-        title: Text("List"),
+      appBar: AppBar(actions: [IconButton(icon: Icon(Icons.shopping_basket), onPressed: (){
+
+      })],
+        title: Center(child: Text(widget.katergori)),
       ),
       body: Container(
         child: GridView.builder(
@@ -36,9 +41,33 @@ class _ProductListViewState extends State<ProductListView> {
                 SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
               return Card(
-                child: ListTile(
-                  title: Text(widget.ProductMarkaList[index]),
-                  subtitle: Text(widget.ProductFiyatList[index]),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Image.network(
+                        widget.ProductResim[index],
+                      ),
+                      flex: 4,
+                    ),
+                    Spacer(),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.black.withOpacity(0.2),
+                        child: Column(
+                          children: [
+                            Text(
+                              widget.ProductMarkaList[index],
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            Text(widget.ProductFiyatList[index] + " TL",
+                                style: TextStyle(fontSize: 20)),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               );
             },
@@ -46,7 +75,11 @@ class _ProductListViewState extends State<ProductListView> {
       ),
     );
   }
-
+/*
+  ListTile(
+  title: Text(widget.ProductMarkaList[index]),
+  subtitle: Text(widget.ProductFiyatList[index]),
+  )*/
 // Future<List<Marka>> veriKaynaginiOku() async {
 //   var gelenJson = await DefaultAssetBundle.of(context)
 //       .loadString("assets/data/product.json");
